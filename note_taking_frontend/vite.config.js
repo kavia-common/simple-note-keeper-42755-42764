@@ -1,13 +1,17 @@
-/* eslint-disable */
 /// <reference types="vite/client" />
 
 import { defineConfig } from 'vite'
-import blitsVitePlugins from '@lightningjs/blits/vite'
 
-export default defineConfig(({ command, mode, ssrBuild }) => {
+/**
+ * Vite config
+ * - Use plain Vite without the Blits plugin because the plugin auto-injects
+ *   optional modules (e.g., i18n/translations) not present in this project,
+ *   causing "Failed to resolve import" errors during dev/preview.
+ * - LightningJS core + Blits components run fine without the plugin for our use.
+ */
+export default defineConfig(() => {
   return {
-    base: '/', // Set to your base path if you are deploying to a subdirectory (example: /myApp/)
-    plugins: [...blitsVitePlugins],
+    base: '/',
     resolve: {
       mainFields: ['browser', 'module', 'jsnext:main', 'jsnext'],
     },

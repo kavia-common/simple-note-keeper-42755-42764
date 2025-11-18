@@ -5,6 +5,11 @@ import { transitions } from '../utils/ui';
  * PUBLIC_INTERFACE
  * Header component that displays application title and action button slot
  */
+/**
+ * PUBLIC_INTERFACE
+ * Header is a LightningJS component that displays the app title and provides a slot
+ * for action elements on the right.
+ */
 export class Header extends lng.Component {
   static _template() {
     return {

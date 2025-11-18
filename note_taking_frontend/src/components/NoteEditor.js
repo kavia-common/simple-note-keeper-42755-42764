@@ -8,6 +8,11 @@ import { transitions } from '../utils/ui';
  *  - save({ id, title, content })
  *  - error({ message })
  */
+/**
+ * PUBLIC_INTERFACE
+ * NoteEditor is a LightningJS component that allows editing a note's title and content
+ * and emits a save payload to the parent.
+ */
 export class NoteEditor extends lng.Component {
   static _template() {
     return {

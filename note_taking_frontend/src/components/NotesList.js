@@ -7,6 +7,11 @@ import { transitions } from '../utils/ui';
  *  - select({ id })
  *  - delete({ id })
  */
+/**
+ * PUBLIC_INTERFACE
+ * NotesList is a LightningJS component that displays a scrollable list of notes and
+ * emits selection and deletion signals for parent components to handle.
+ */
 export class NotesList extends lng.Component {
   static _template() {
     return {
