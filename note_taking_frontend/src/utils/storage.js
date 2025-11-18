@@ -38,7 +38,9 @@ export function ensureSeed() {
   const now = Date.now();
   const sample = [
     {
-      id: crypto.randomUUID ? crypto.randomUUID() : String(now),
+      id: (typeof self !== 'undefined' && self.crypto?.randomUUID)
+        ? self.crypto.randomUUID()
+        : (typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : String(now)),
       title: 'Welcome to Simple Note Keeper',
       content:
         'This is a sample note. Edit me, create a new one with Cmd/Ctrl+N, and save with Cmd/Ctrl+S.\n\nNotes are saved in your browser.',
