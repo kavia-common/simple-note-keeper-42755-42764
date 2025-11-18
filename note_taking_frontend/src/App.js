@@ -15,6 +15,9 @@ export default Blits.Component('App', {
   template: {
     // Ensure the root paints and defines an area
     rect: true,
+    // Explicit width/height so children using (w,h)=> lambdas receive stage dimensions
+    w: (w) => w,
+    h: (h) => h,
     color: 0xfff9fafb,
     Header: {
       // Bridge class-based component via Lightning core class reference
