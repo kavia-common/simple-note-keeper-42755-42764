@@ -1,49 +1,49 @@
-# lightningjs
+# Simple Note Keeper (LightningJS + Vite)
 
-### lightningjs
+A minimal note-taking frontend built with LightningJS, themed with "Ocean Professional". It supports listing, creating, editing, and deleting notes, with persistence to localStorage. No backend is required.
 
+Features:
+- Notes list (left) and editor (right), responsive (stacks on small screens).
+- Create, edit, delete notes.
+- Persist to localStorage; seeds a sample note on first run.
+- Keyboard shortcuts:
+  - Cmd/Ctrl+N: New note
+  - Cmd/Ctrl+S: Save note
+- Validation: Title is required.
+- Subtle rounded corners, shadows, and gradient header.
 
-Welcome to the _lightningjs_ Lightning 3 Blits App!
+Theme (Ocean Professional):
+- primary: #2563EB
+- secondary/success: #F59E0B
+- error: #EF4444
+- background: #f9fafb
+- surface: #ffffff
+- text: #111827
 
-### Getting started
+Environment variables:
+- Uses Vite environment if present. You may set:
+  - VITE_PORT (defaults to 3000)
+  - VITE_LOG_LEVEL, VITE_NODE_ENV, etc. are optional and not required.
 
-Follow the steps below to get your Lightning 3 Blits App up and running in no time.
+Getting started:
+1. Install dependencies
+   - npm install
+2. Run in this environment (the preview is already configured to run on port 3000)
+   - npm run dev
+   - In some CI previews, the system starts the dev server automatically; otherwise run the command above.
+3. Build (optional)
+   - npm run build
+4. Preview build (optional)
+   - npm run preview
 
-#### IDE setup
+Usage notes:
+- Your notes are stored locally in your browser via localStorage and will persist across reloads.
+- First run seeds a "Welcome to Simple Note Keeper" note.
+- Use the keyboard shortcuts for faster editing:
+  - Cmd/Ctrl+N creates a new empty note (focuses the editor).
+  - Cmd/Ctrl+S saves the current note.
+- If no notes exist, an empty state message will be shown.
 
-It is highly recommended to install the Blits [VS-code extension](https://marketplace.visualstudio.com/items?itemName=LightningJS.lightning-blits) which will give you template highlighting and improved autocompletion.
-
-#### Project setup
-
-Run the following command to install the dependencies of your App:
-
-```sh
-npm install
-```
-
-#### Build and run in development mode
-
-Run your App in development mode:
-
-```sh
-npm run dev
-```
-
-This command uses Vite to fire up a local server, with Hot Reloading support. Visit the provided link in your web browser to see the App in action.
-
-#### Build the App for production
-
-Create an optimized and minified version of your App:
-
-```sh
-npm run build
-```
-
-This will create a production version of the app in the `dist` folder.
-
-
-### Resources
-
-- [Blits documentation](https://lightningjs.io/v3-docs/blits/getting_started/intro.html) - official documentation
-- [Blits Example App](https://blits-demo.lightningjs.io/?source=true) - a great reference to learn by example
-- [Blits Components](https://lightningjs.io/blits-components.html) - off-the-shelf, basic and performant reference components
+Troubleshooting:
+- If the canvas doesn't appear, ensure the #app element exists in index.html and that the dev server is running on port 3000.
+- If running behind a proxy, set VITE_TRUST_PROXY accordingly in your .env when needed.
